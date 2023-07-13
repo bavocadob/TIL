@@ -60,3 +60,9 @@ $ git commit --amend
 # write and quit
 ```
 
+### git 설정 초기화
+```bash
+# vim을 활용해서 설정 제거하기
+
+
+```

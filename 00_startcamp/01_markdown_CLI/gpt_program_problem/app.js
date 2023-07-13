@@ -17,7 +17,7 @@ const addChat = (type, value) => {
 // 1. 챗봇 서버에 요청할 URL (chatGPT API reference Chat 파트 참고)
 const OPEN_API_URL = "https://api.openai.com/v1/chat/completions"
 // 2. API 키 (발급 받은 Secret Key)
-const API_KEY = "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"
+const API_KEY = ""
 
 // 필요한 헤더 정보
 const headers = {
