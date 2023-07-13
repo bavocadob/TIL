@@ -31,3 +31,21 @@ $ git status
 ```bash
 $ git add {path}<folder_name>/{README.md}
 ```
+
+### Repository에 저장하기
+```bash
+$ git commit -m "commit message"
+```
+
+### 기초설정
+```bash
+$ git config --global user.email {email}
+$ git config --global user.name {name}
+$ git config --global --list 
+
+user.email= {email}
+user.name= {name}
+```
+
+### 커밋 기록 확인하기
+
