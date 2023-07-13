@@ -48,4 +48,15 @@ user.name= {name}
 ```
 
 ### 커밋 기록 확인하기
+```bash
+$ git log
+```
+
+### 최근 커밋 수정하기
+```bash
+$ git commit --amend
+#INSERT
+#:wq
+# write and quit
+```
 
