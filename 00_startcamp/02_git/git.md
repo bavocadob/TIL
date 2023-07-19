@@ -74,7 +74,8 @@ $ vim ~/.gitconfig
 
 ### 원격 저장소 git에 등록
 ```bash
-git remote add {remote_nickname} {remote_url}
+$ git remote add {remote_nickname} {remote_url}
+$ git remote -v
 ```
 
 
@@ -88,3 +89,12 @@ $ git push origin master
 ```bash
 $ git clone {github_url}
 ```
+- 이미 폴더가 존재할 때
+```bash
+$ git pull origin master
+```
+
+### git ignore
+- git에서 추적하지 않을 파일이나 폴더 등록
+- .gitignore 파일이용
+- [gitignore.io](https://www.toptal.com/developers/gitignore/) 에서자동 생성 지원
