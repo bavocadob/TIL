@@ -4,6 +4,7 @@ def backtracking(idx, arr, current_sum):
     global result
 
     if len(arr) > N or current_sum > K:
+        print(arr)
         return
 
     if idx == 12:
