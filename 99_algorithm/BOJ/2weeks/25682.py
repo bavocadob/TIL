@@ -1,3 +1,6 @@
+# 체스판 다시 칠하기 2
+# 누적합 2차원으로 활용
+
 import sys
 input = sys.stdin.readline
 
