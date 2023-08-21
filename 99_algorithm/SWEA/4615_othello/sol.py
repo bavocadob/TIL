@@ -29,7 +29,6 @@ for tc in range(T):
 
                 if 0 <= nx < N and 0 <= ny < N:
                     if board[nx][ny] == color:
-                        print(nx,ny, distance)
                         can_change = True
                         break
                     elif board[nx][ny] != 0:
@@ -41,11 +40,13 @@ for tc in range(T):
 
             if can_change:
                 for d in range(1, distance):
-
-                    nx, ny = x + dx[k] * distance, y + dy[k] * distance
-                    print('변화', nx,ny, d, x, y)
+                    nx, ny = x + dx[k] * d, y + dy[k] * d
                     board[nx][ny] = color
 
-        for line in board:
-            print(line)
-        print()
+        w_count = 0
+        b_count = 0
+    for board_line in board:
+        b_count += board_line.count(1)
+        w_count += board_line.count(2)
+
+    print(f'#{tc+1} {b_count} {w_count}')
