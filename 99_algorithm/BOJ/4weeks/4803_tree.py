@@ -2,6 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
+
 def dfs(idx, parent):
     global cycle
     visited[idx] = True

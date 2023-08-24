@@ -43,5 +43,4 @@ visited = [False] * (N + 1)
 visited[max_index] = True
 dfs(max_index, 0)
 
-
 print(max_val)
