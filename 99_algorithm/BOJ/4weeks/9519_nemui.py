@@ -11,13 +11,21 @@ def rotate(str_list):
 
 N = int(input())
 
-origianl_str = list(input())
+original_str = list(input())
+string_lst = original_str[:]
 
-cycle = len(origianl_str)
+cycle = 0
 
+while True:
+    string_lst = rotate(string_lst)
+    cycle += 1
+    if string_lst == original_str:
+        break
 
-for _ in range(10):
-    origianl_str = rotate(origianl_str)
-    print(''.join(origianl_str))
+N %= cycle
 
+while N != cycle:
+    string_lst = rotate(string_lst)
+    N += 1
 
+print(''.join(string_lst))
