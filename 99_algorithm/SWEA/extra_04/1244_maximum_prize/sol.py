@@ -15,6 +15,7 @@ def is_sorted(arr):
 
 def check_duplicate(arr):
     target = arr[:]
+    target.sort()
     for i in range(len(target) - 1):
         if target[i] == target[i + 1]:
             return True
@@ -24,34 +25,25 @@ def check_duplicate(arr):
 
 def dfs(idx, change_cnt):
     global result, end
-    if end:
-        return
 
-    if change_cnt == K:
-        if result < ''.join(numbers):
-            result = ''.join(numbers)
-
+    if end or change_cnt == K:
+        result = max(result, ''.join(numbers))
         return
 
     if is_sorted(numbers):
         if (K - change_cnt) % 2 and not duplicate:
             numbers[-1], numbers[-2] = numbers[-2], numbers[-1]
-            result = ''.join(numbers)
-            numbers[-1], numbers[-2] = numbers[-2], numbers[-1]
-        else:
-            result = ''.join(numbers)
-            end = True
+        result = ''.join(numbers)
+        end = True
         return
 
-    change = False
     for i in range(idx + 1, N):
         if numbers[i] > numbers[idx]:
             numbers[i], numbers[idx] = numbers[idx], numbers[i]
             dfs(idx + 1, change_cnt + 1)
             numbers[i], numbers[idx] = numbers[idx], numbers[i]
-            change = True
 
-    if not change and idx < len(numbers):
+    if idx < len(numbers):
         dfs(idx + 1, change_cnt)
 
 
