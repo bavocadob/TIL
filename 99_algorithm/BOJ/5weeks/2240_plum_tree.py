@@ -1,22 +1,29 @@
-plum_dict = {1: 2, 2: 1}
+import sys
+input = sys.stdin.readline
 
 time, move = map(int, input().split())
 
 # 나무위치, 시간, 이동횟수
+dp = [[0] * (time + 1) for _ in range(move + 1)]
 
-dp = [[[0] * move for _ in range(time)] for _ in range(2)]
-
-plums = [int(input()) for _ in range(time)]
-
-for t in range(time):
-    for m in range(move):
-        plum = plums[t]
-        if plum == 1:
-            dp[0][t][m] = max(dp[0][t - 1][m], dp[1][t - 1][m - 1]) + 1
-            dp[1][t][m] = max(dp[1][t - 1][m], dp[0][t - 1][m - 1])
+for t in range(1, time + 1):
+    plum = int(input())
+    for m in range(move + 1):
+        if m == 0:
+            if plum == 1:
+                dp[0][t] = dp[0][t - 1] + 1
+            else:
+                dp[0][t] = dp[0][t - 1]
         else:
-            dp[1][t][m] = max(dp[1][t - 1][m], dp[0][t - 1][m - 1]) + 1
-            dp[0][t][m] = max(dp[0][t - 1][m], dp[1][t - 1][m - 1])
+            dp[m][t] = max(dp[m - 1][t - 1], dp[m][t - 1])
+            if m % 2 == 0 and plum == 1:
+                dp[m][t] += 1
+            elif m % 2 and plum == 2:
+                dp[m][t] += 1
 
-print(dp[0])
-print(dp[1])
+result = 0
+
+for d in dp:
+    result = max(max(d), result)
+
+print(result)
