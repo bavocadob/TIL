@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open('input.txt')
+input = sys.stdin.readline
 
 T = int(input())
 
@@ -18,11 +18,12 @@ for _ in range(T):
             # 제일 낮은값 찾기
             for k in range(right - left):
                 temp = min(temp, dp[left][left + k] + dp[left + k + 1][right])
-            dp[left][right] = temp
+
+            dp[left][right] = temp + sum(files[left:right + 1])
 
             # left~right 값 더하기
-            for i in range(left, right + 1):
-                dp[left][right] += files[i]
+            # for i in range(left, right + 1):
+            #     dp[left][right] += files[i]
 
     print(dp[0][N - 1])
 
