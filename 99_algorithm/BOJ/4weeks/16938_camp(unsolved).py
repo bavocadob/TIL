@@ -11,6 +11,12 @@ def main():
             if bm & (1 << j):
                 diffs.append(A[j])
 
+                if sum(diffs) > R:
+                    break
+
+        if len(diffs) > 1 and L <= sum(diffs) <= R and max(diffs) - min(diffs) >= X:
+            ans += 1
+
     print(ans)
 
 
