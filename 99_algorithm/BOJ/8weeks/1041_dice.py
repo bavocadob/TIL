@@ -1,16 +1,23 @@
-dice_dict = {0: 5, 5: 0, 1: 4, 4: 1, 2: 3, 3: 2}
-
 N = int(input())
 
 dice = list(map(int, input().split()))
-dice.pop(dice_dict[dice.index(min(dice))])
 
-dice.sort()
-ans = 0
-if N > 2:
-    ans += ((5 * N ** 2) - (8 * N) + 4) * dice[0]
-    ans += (N - 1) * 8 * dice[1]
-    ans += 4 * dice[2]
+if N == 1:
+    dice.sort()
+    print(sum(dice[:5]))
 else:
-    
-print(ans)
+
+    min_dice = list()
+
+    min_dice.append(min(dice[0], dice[5]))
+    min_dice.append(min(dice[4], dice[1]))
+    min_dice.append(min(dice[2], dice[3]))
+    min_dice.sort()
+
+    ans = 0
+
+    ans += ((5 * N ** 2) - (8 * N) + 4) * min_dice[0]
+    ans += (N - 1) * 8 * min_dice[1]
+    ans += 4 * min_dice[2]
+
+    print(ans)
