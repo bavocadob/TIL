@@ -21,20 +21,19 @@ def upper_bound(target):
 K, N, M = map(int, input().split())
 
 threshold_cnt = ceil(K / 12)
-# print(threshold_cnt)
 
 winner = []
 candidate = []
 
 curr_score = [(int(input()), i) for i in range(K)]
 curr_score.sort()
-# print(curr_score)
 
 if N == M:
-    gold_idx = K - (K + 11) // 12
-    for i in range(gold_idx, K):
-        winner.append(curr_score[i][1] + 1)
-        candidate.append(curr_score[i][1] + 1)
+    gold_value = curr_score[K - (K + 11) // 12][0]
+    for i in range(K):
+        if curr_score[i][0] >= gold_value:
+            winner.append(curr_score[i][1] + 1)
+            candidate.append(curr_score[i][1] + 1)
 else:
     for i in range(K):
         # 최악의 경우(나빼고 다 100점, 나는 0점)에도 금메달을 딸 수 있는지 조사
@@ -53,6 +52,9 @@ else:
 
 winner.sort()
 candidate.sort()
+
+# result_data = '\n'.join(map(str, winner)) + '\n--------\n' + '\n'.join(map(str, candidate))
+# print(result_data)
 
 for win in winner:
     print(win, end='\n')
