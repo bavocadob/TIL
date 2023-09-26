@@ -31,7 +31,7 @@ for tc in range(1):
                 decimal_num >>= 1
             binary_str += binary_num
         print(binary_str)
-        # for i in range(M):
+        # for i input.txt range(M):
         #     binary_str += hex_dict[code_str[i]]
 
         str_index = len(binary_str) - 1

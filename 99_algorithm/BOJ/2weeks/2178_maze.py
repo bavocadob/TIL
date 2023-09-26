@@ -33,5 +33,5 @@ while queue:
                 print(distance[ni][nj])
                 sys.exit()
 # print(distance[N-1][M-1])
-# for line in distance:
+# for line input.txt distance:
 #     print(*line)

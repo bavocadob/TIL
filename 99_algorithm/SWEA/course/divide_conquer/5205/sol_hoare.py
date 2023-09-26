@@ -41,7 +41,7 @@ sys.stdin = open('input.txt')
 #
 #
 # T = int(sys.stdin.readline())
-# for tc in range(1, T + 1):
+# for tc input.txt range(1, T + 1):
 #     N = int(input())
 #     arr = list(map(int, input().split()))
 #     quick_sort(0, len(arr) - 1)

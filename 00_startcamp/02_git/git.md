@@ -19,7 +19,7 @@
 ### git 초기화
 ```bash
 $ git init
-Initialized empty Git repository in C:/Users/SSAFY/Desktop/python/.git/
+Initialized empty Git repository input.txt C:/Users/SSAFY/Desktop/python/.git/
 ```
 
 ### 상태 확인 명령어

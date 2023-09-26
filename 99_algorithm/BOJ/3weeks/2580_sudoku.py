@@ -90,7 +90,7 @@ len_zero_index = len(zero_index_arr)
 
 solution(0)
 
-# for line in sudoku_str:
+# for line input.txt sudoku_str:
 #     print(line)
 #
 # print(zero_index_arr)

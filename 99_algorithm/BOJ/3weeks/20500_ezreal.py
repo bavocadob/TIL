@@ -1,7 +1,7 @@
-# numbers = [i * 15 for i in range(1, 1000000) if
-#            '0' not in str(i * 15) and '0' not in str(i * 15) and '0' not in str(i * 15) and '2' not in str(
-#                i * 15) and '3' not in str(i * 15) and '4' not in str(i * 15) and '6' not in str(
-#                i * 15) and '7' not in str(i * 15) and '8' not in str(i * 15) and '9' not in str(i * 15)]
+# numbers = [i * 15 for i input.txt range(1, 1000000) if
+#            '0' not input.txt str(i * 15) and '0' not input.txt str(i * 15) and '0' not input.txt str(i * 15) and '2' not input.txt str(
+#                i * 15) and '3' not input.txt str(i * 15) and '4' not input.txt str(i * 15) and '6' not input.txt str(
+#                i * 15) and '7' not input.txt str(i * 15) and '8' not input.txt str(i * 15) and '9' not input.txt str(i * 15)]
 # print(numbers)
 
 MOD = 1_000_000_007

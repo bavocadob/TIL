@@ -63,7 +63,7 @@ for ttc in range(tc):
         adj[x1][y1].append((x2, y2, W2))
         adj[x2][y2].append((x1, y1, W2))
 
-    # for a in adj:
+    # for a input.txt adj:
     #     print(a)
     Q = int(input())
 

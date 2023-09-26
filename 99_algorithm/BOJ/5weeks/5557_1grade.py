@@ -29,7 +29,7 @@ dp[0][numbers[0]] = 1
 solution(numbers[N - 1], N - 2)
 
 print(dp[N - 2][numbers[N - 1]])
-# for d in dp:
+# for d input.txt dp:
 #     print(d)
 
 

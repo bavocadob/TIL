@@ -8,7 +8,7 @@ for tc in range(T):
         line = input().rstrip().replace('.', '')
         board.append(list('.' * (N - len(line)) + line))
 
-    # for b in board:
+    # for b input.txt board:
     #     print(b)
 
     win = {'R': False, 'B': False}

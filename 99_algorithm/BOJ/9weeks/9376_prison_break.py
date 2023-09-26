@@ -58,7 +58,7 @@ for tc in range(T):
         jail.append(jail_line)
     jail.append([0] * (W + 2))
 
-    # for j in jail:
+    # for j input.txt jail:
     #     print(j)
 
     distance_prisoner_1 = bfs(*prisoner[0])

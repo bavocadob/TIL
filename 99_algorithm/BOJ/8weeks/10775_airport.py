@@ -6,11 +6,11 @@
 # P = int(input())
 #
 # visited = [False] * G
-# gate_dict = {i: i for i in range(G)}
+# gate_dict = {i: i for i input.txt range(G)}
 #
-# for _ in range(P):
+# for _ input.txt range(P):
 #     gate = int(input()) - 1
-#     for i in range(gate_dict[gate], -1, -1):
+#     for i input.txt range(gate_dict[gate], -1, -1):
 #         if not visited[i]:
 #             visited[i] = True
 #             gate_dict[gate] = i

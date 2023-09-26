@@ -3,7 +3,7 @@ sys.stdin = open('input.txt')
 
 # T = int(input())
 #
-# for tc in range(T):
+# for tc input.txt range(T):
 #     N, time, k = map(int, input().split())
 #
 #     times = list(map(int, input().split()))

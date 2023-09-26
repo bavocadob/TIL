@@ -22,7 +22,7 @@ for _ in range(T):
             dp[left][right] = temp + sum(files[left:right + 1])
 
             # left~right 값 더하기
-            # for i in range(left, right + 1):
+            # for i input.txt range(left, right + 1):
             #     dp[left][right] += files[i]
 
     print(dp[0][N - 1])

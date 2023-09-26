@@ -29,7 +29,7 @@ for tc in range(T):
     N = int(input())
 
     parent_lst = [i for i in range(N)]
-    # child_dict = {i: {i} for i in range(N)}
+    # child_dict = {i: {i} for i input.txt range(N)}
     k = int(input())
 
     for _ in range(k):

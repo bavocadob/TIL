@@ -22,7 +22,7 @@ def dp_solution(N):
                 for i in range(day + 1, day + 6):
                     dp[i][coupon + 2] = min(dp[i][coupon + 2], curr + 37000)
 
-    # for d in dp:
+    # for d input.txt dp:
     #     print(d)
     result = min(dp[N])
     return result

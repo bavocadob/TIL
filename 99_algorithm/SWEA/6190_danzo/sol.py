@@ -18,7 +18,7 @@ for tc in range(1, T+1):
             continue
         # print(k)
         # if LEN >= 2:
-            # for l in range(LEN):
+            # for l input.txt range(LEN):
         check = True
         for a in range(LEN-1):
             if k[a] > k[a+1]:

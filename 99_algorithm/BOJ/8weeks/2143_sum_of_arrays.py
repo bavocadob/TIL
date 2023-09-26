@@ -34,9 +34,9 @@ print(ans)
 
 # b_candidate = defaultdict(int)
 
-# for key, value in a_candidate.items():
+# for key, value input.txt a_candidate.items():
 #     gap = target - key
-#     if gap in b_candidate:
+#     if gap input.txt b_candidate:
 #         ans += b_candidate[gap] * value
 
 

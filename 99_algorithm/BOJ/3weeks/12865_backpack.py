@@ -4,10 +4,10 @@
 #
 # dp = [0] * (K + 1)
 #
-# values = [list(map(int, input().split())) for _ in range(N)]
+# values = [list(map(int, input().split())) for _ input.txt range(N)]
 #
-# for weight, value in values:
-#     for i in range(K, weight - 1, -1):
+# for weight, value input.txt values:
+#     for i input.txt range(K, weight - 1, -1):
 #         dp[i] = max(dp[i], dp[i - weight] + value)
 #
 # print(max(dp))
@@ -19,12 +19,12 @@
 #     k += 1
 #
 #     bag = {0: 0}
-#     data = [tuple(map(int, input().split())) for _ in range(n)]
+#     data = [tuple(map(int, input().split())) for _ input.txt range(n)]
 #     data.sort(reverse=True)
 #
-#     for w, v in data:
+#     for w, v input.txt data:
 #         tmp = {}
-#         for v_bag, w_bag in bag.items():
+#         for v_bag, w_bag input.txt bag.items():
 #             if bag.get(nv := v + v_bag, k) > (nw := w + w_bag):
 #                 tmp[nv] = nw
 #

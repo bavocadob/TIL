@@ -41,9 +41,9 @@ print(dp[N])
 # dp = [0] * (N + 1)
 # dp[0] = 1
 #
-# for i in range(1, N + 1):
+# for i input.txt range(1, N + 1):
 #     distance = stairs[i]
-#     for j in range(i - 1, -1, -1):
+#     for j input.txt range(i - 1, -1, -1):
 #         dp[i] = (dp[i] + dp[j]) % 1234567
 #         distance += stairs[j]
 #         if distance > K:

@@ -51,7 +51,7 @@ for tc in range(T):
     for i in range(len(community)):
         result += community[i][2]
 
-    # for c in community:
+    # for c input.txt community:
     #     print(c)
 
     print(f'#{tc + 1} {result}')

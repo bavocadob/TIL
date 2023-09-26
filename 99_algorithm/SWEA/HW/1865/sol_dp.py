@@ -7,16 +7,16 @@ sys.stdin = open('input.txt')
 #     n = len(matrix)
 #
 #     # dp[i][j]는 i번째 행까지 고려하고 j번 열을 선택한 경우의 최대 곱
-#     dp = [[0] * n for _ in range(n)]
+#     dp = [[0] * n for _ input.txt range(n)]
 #
 #     # 초기 값 설정
 #     dp[0] = matrix[0]
 #
-#     for i in range(1, n):
-#         for j in range(n):
+#     for i input.txt range(1, n):
+#         for j input.txt range(n):
 #             # j번 열을 선택한 경우의 최대 곱을 구함
 #             max_val = 0
-#             for k in range(n):
+#             for k input.txt range(n):
 #                 if k != j:
 #                     max_val = max(max_val, dp[i - 1][k])
 #             dp[i][j] = max_val * matrix[i][j]

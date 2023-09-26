@@ -11,7 +11,7 @@ input = sys.stdin.readline
 #
 #     cnt = 0
 #
-#     for next_node in connection[idx]:
+#     for next_node input.txt connection[idx]:
 #         if next_node != idx and not visited[next_node]:
 #             cnt += dfs(next_node, connection, visited)
 #
@@ -21,7 +21,7 @@ input = sys.stdin.readline
 def solution():
     N, W = map(int, input().split())
 
-    # connection = [list() for _ in range(N + 1)]
+    # connection = [list() for _ input.txt range(N + 1)]
     connection = [0] * (N + 1)
 
     visited = [False] * (N + 1)

@@ -11,7 +11,7 @@
 #         return dp[x][y]
 #
 #     result = 0
-#     for k in range(4):
+#     for k input.txt range(4):
 #         nx, ny = x + dx[k], y + dy[k]
 #         if 0 <= nx < N and 0 <= ny < M:
 #             if _map[x][y] > _map[nx][ny]:
@@ -23,14 +23,14 @@
 #
 # N, M = map(int, input().split())
 #
-# dp = [[-1] * M for _ in range(N)]
+# dp = [[-1] * M for _ input.txt range(N)]
 # dp[N - 1][M - 1] = 1
 #
-# _map = [list(map(int, input().split())) for _ in range(N)]
+# _map = [list(map(int, input().split())) for _ input.txt range(N)]
 #
 # print(dfs(0, 0))
 
-# for l in dp:
+# for l input.txt dp:
 #     print(l)
 
 import sys

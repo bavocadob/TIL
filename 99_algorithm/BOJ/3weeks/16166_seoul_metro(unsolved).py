@@ -11,17 +11,17 @@ from collections import deque
 # def solution(depth, cnt, metro_set: set):
 #     global min_transfer, find
 #     if depth == N:
-#         if target in metro_set:
+#         if target input.txt metro_set:
 #             find = True
 #             min_transfer = min(min_transfer, cnt)
 #         return
 #
-#     if target in metro_set and len(metro_set) > 1:
+#     if target input.txt metro_set and len(metro_set) > 1:
 #         find = True
 #         min_transfer = min(min_transfer, cnt)
 #         return
 #
-#     for i in range(N):
+#     for i input.txt range(N):
 #         if not visited[i] and metro_set & metro_line[i]:
 #             visited[i] = True
 #             new_set = metro_set.copy()
