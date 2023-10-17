@@ -86,10 +86,14 @@ for i in range(N):
 
 for _ in range(M):
     u, v = map(int, input().split())
-    v += N
-    C[u][v] = INF
-    adj[u].append(v)
-    adj[v].append(u)
+
+    C[u][v + N] = INF
+    adj[u].append(v + N)
+    adj[v + N].append(u)
+
+    C[v][u + N] = INF
+    adj[u + N].append(v)
+    adj[v].append(u + N)
 
 R = int(input())
 targets = list(map(int, input().split()))
