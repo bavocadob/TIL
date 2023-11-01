@@ -1,3 +1,8 @@
+import sys
+
+input = sys.stdin.readline
+
+
 def find(idx):
     if parents[idx] == idx:
         return idx
@@ -27,21 +32,25 @@ sizes = [0 for _ in range(N)]
 balloon_score = list(map(int, input().split()))
 values = balloon_score[:]
 
-orders = list(reversed(list(map(lambda x: int(x) - 1, input().split()))))
+orders = list(map(lambda x: int(x) - 1, input().split()))
 ans = 0
-
-for i in orders:
+temp = 0
+for idx in range(len(orders) - 1, 0, -1):
+    i = orders[idx]
     sizes[i] += 1
 
     if i - 1 >= 0 and sizes[find(i - 1)]:
+        temp_left = find(i - 1)
+        temp -= sizes[temp_left] * values[temp_left]
         union(i, i - 1)
 
     if i + 1 < N and sizes[find(i + 1)]:
+        temp_right = find(i + 1)
+        temp -= sizes[temp_right] * values[temp_right]
         union(i, i + 1)
 
-    ans = max(ans, sizes[find(i)] * values[find(i)])
-    print(values)
-    print(sizes)
-    print(ans)
+    temp_parent = find(i)
+    temp += sizes[temp_parent] * values[temp_parent]
+    ans = max(temp, ans)
 
-
+print(ans)
