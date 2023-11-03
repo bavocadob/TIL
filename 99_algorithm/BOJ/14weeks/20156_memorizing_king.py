@@ -48,10 +48,10 @@ query_idx = M - 1
 for a, b, c, i in queries:
     while query_idx >= a:
         target = students[query_idx]
+        query_idx -= 1
         if target == -1:
             continue
         curr_parent[target] = parents[target]
-        query_idx -= 1
 
     pb = find(b)
     pc = find(c)
