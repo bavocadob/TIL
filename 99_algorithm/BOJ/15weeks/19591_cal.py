@@ -2,12 +2,10 @@ from collections import deque
 
 
 def cpp_integer_division(dividend, divisor):
-    if (dividend < 0) != (divisor < 0):
-        # 두 피연산자의 부호가 다를 경우 버림 동작이 C++과 같게 하기 위해 1을 더해줌
-        result = (dividend + divisor - 1) // divisor
+    if dividend * divisor < 0 and dividend % divisor != 0:
+        return (dividend // divisor) + 1
     else:
-        result = dividend // divisor
-    return result
+        return dividend // divisor
 
 
 def calc_left():
