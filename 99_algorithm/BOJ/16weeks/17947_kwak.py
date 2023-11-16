@@ -6,9 +6,9 @@ N, M, K = map(int, input().rstrip().split())
 cards = {i for i in range(1, N * 4 + 1)}
 
 for _ in range(N):
-    a, b = map(int, input().rstrip().split())
-    cards.discard(a)
-    cards.discard(b)
+    A = list(map(int, input().split()))
+    for aa in A:
+        cards.discard(aa)
 
 my_a, my_b = map(int, input().rstrip().split())
 cards.discard(my_a)
