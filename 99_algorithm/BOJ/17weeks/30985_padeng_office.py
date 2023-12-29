@@ -2,7 +2,7 @@ import heapq
 import sys
 
 input = sys.stdin.readline
-INF = int(1e9)
+INF = float('inf')
 
 
 def dijkstra():
@@ -18,7 +18,7 @@ def dijkstra():
     while queue:
         dist, floor, node = heapq.heappop(queue)
 
-        if distance[floor][node] != dist:
+        if distance[floor][node] < dist:
             continue
 
         for cost, next_node in adj[node]:
