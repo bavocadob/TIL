@@ -22,6 +22,7 @@ for _ in range(W):
 
 dp = [[INF] * (W + 1) for _ in range(W + 1)]
 
+dp[0][0] = 0
 dp[1][0] = get_distance((1, 1), A[1])
 dp[0][1] = get_distance(A[1], (N, N))
 
@@ -49,8 +50,6 @@ for i in range(W):
 
 ans = INF
 
-print(dp)
-
 left = -1
 right = -1
 for i in range(W):
@@ -62,11 +61,12 @@ for i in range(W):
         ans = dp[W][i]
         left, right = W, i
 
-
 print(ans)
 
 ans_list = []
-while left != 0 and left != 1 and right != 0  and right != 1:
+while left != 0 and left != 1 and right != 0 and right != 1:
+    # print(f'L : {left} R : {right}')
+    # print(f'현재 리스트 : {ans_list}')
     if right > left and right - left > 1:
         ans_list += (right - left - 1) * [2]
         right = left + 1
@@ -78,19 +78,38 @@ while left != 0 and left != 1 and right != 0  and right != 1:
         continue
 
     if left > right:
-        ans_list.append(2)
         ans_list.append(1)
+        ans_list.append(2)
+
     else:
-        ans_list.append(1)
         ans_list.append(2)
+        ans_list.append(1)
 
     curr = dp[left][right]
-    next_case = min(left, right - 1)
+    next_case = min(left, right) - 1
 
     for i in range(next_case):
+        if i == 0:
+            A[0] = (1, 1)
+        if dp[i][next_case] == dp[left][right] - get_distance(A[left], A[i]) - get_distance(A[right], A[next_case]):
+            left = i
+            right = next_case
 
-        if dp[i][next_case] == dp[left][right] - 
+        if i == 0:
+            A[0] = (N, N)
 
+        if dp[next_case][i] == dp[left][right] - get_distance(A[left], A[next_case]) - get_distance(A[right], A[i]):
+            left = next_case
+            right = i
 
+    # print(left, right)
 
+if right > left:
+    ans_list += [2] * (right - left)
+    ans_list += [1] * left
+else:
+    ans_list += [1] * (left - right)
+    ans_list += [2] * right
 
+for i in range(len(ans_list)):
+    print(ans_list[len(ans_list) - 1 - i])
