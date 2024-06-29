@@ -1,3 +1,4 @@
+import heapq
 import sys
 
 input = sys.stdin.readline
@@ -5,33 +6,30 @@ INF = int(1e9)
 
 
 def dijkstra():
-    distances = [[INF] * (K + 1) for _ in range(N + 1)]
-    distances[1][0] = 0
+    distances = [INF] * (N + 1)
+    distances[1] = 0
 
-    for cnt in range(K + 1):
-        for node in range(1, N + 1):
-            if distances[node][cnt] == INF:
-                continue
+    Q = [(0, 1, 0)]
 
-            for next_node, cost, gap in adj[node]:
-                next_time = distances[node][cnt] + gap - (distances[node][cnt] % gap) + cost
-                if distances[node][cnt] % gap == 0:
-                    next_time -= gap
+    while Q:
+        dist, node, cnt = heapq.heappop(Q)
 
-                if next_time < distances[next_node][cnt]:
-                    distances[next_node][cnt] = next_time
+        if distances[node] != dist:
+            continue
 
-                if cnt < K:
-                    next_time = distances[node][cnt] + cost
-                    if next_time < distances[next_node][cnt + 1]:
-                        distances[next_node][cnt + 1] = next_time
+        for next_node, cost, gap in adj[node]:
+            mod = (gap - dist) % gap
+            if mod and cnt < K:
+                if distances[next_node] > dist + cost:
+                    distances[next_node] = dist + cost
+                    heapq.heappush(Q, (dist + cost, next_node, cnt + 1))
 
-    ans = INF
-    for i in range(K + 1):
-        ans = min(ans, distances[N][i])
+            if distances[next_node] > dist + cost + mod:
+                distances[next_node] = dist + cost + mod
+                heapq.heappush(Q, (dist + cost + mod, next_node, cnt))
 
-    if ans != INF:
-        return ans
+    if distances[N] != INF:
+        return distances[N]
     else:
         return -1
 
