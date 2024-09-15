@@ -33,4 +33,4 @@ for i in range(N):
     left[i] = round(pos[i] - dist, 4)
     right[i] = round(pos[i] + dist, 4)
 
-print(solve()))
+print(solve())
