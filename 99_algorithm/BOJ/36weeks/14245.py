@@ -20,8 +20,8 @@ def lazy_update(left, right, node):
             tree[node] ^= lazy[node]
 
         if left != right:
-            lazy[node * 2] = lazy[node]
-            lazy[node * 2 + 1] = lazy[node]
+            lazy[node * 2] ^= lazy[node]
+            lazy[node * 2 + 1] ^= lazy[node]
 
     lazy[node] = 0
 
@@ -37,8 +37,8 @@ def update(start, end, left, right, node, val):
             tree[node] ^= val
 
         if left != right:
-            lazy[node * 2] = val
-            lazy[node * 2 + 1] = val
+            lazy[node * 2] ^= val
+            lazy[node * 2 + 1] ^= val
         return
 
     mid = (left + right) // 2
