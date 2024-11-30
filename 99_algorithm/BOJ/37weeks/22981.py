@@ -11,4 +11,4 @@ for i in range(1, N):
     temp = (A[0] * i) + (A[i] * (N - i))
     ans = max(ans, temp)
 
-print(math.ceil(K / ans))
+print(K // ans if K % ans == 0 else K // ans + 1)
