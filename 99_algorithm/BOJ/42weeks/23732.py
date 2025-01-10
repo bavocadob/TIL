@@ -7,6 +7,8 @@ count = 0
 for i in range(1, N):
     if S[i - 1] == S[i]:
         idx = i - 1
+
     count += (idx + 1)
+    print(i, idx, count)
 
 print(count)
