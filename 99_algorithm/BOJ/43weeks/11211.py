@@ -10,9 +10,10 @@ def solve():
         total_sum += step
         temp_lo = total_sum - i * D
         temp_hi = temp_lo + 1
-
+        
         lo = max(lo, temp_lo)
         hi = min(hi, temp_hi)
+        print(lo, hi)
 
         if lo > hi:
             print("impossible")
