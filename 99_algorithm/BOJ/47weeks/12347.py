@@ -1,7 +1,7 @@
 def check(f, r):
     global ans
     g = r - f
-    cur = r * 10 + f
+    cur = f * 10 + r
     while cur <= N:
         ans += 1
         r += g
